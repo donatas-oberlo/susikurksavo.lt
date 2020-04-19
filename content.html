@@ -117,14 +117,15 @@
         const img = new Image();
         const src = image.getAttribute('data-src');
         img.src = src;
-        img.onload = function() {
+        img.onload = function () {
           if (image.replaceWith) {
+            img.classList.add('image');
             image.replaceWith(img);
           } else {
             image.src = src;
+            image.classList.remove('loader');
+            image.classList.add('image');
           }
-          image.classList.remove('loader');
-          image.classList.remove('image');
         }
       }
     }
@@ -192,24 +193,25 @@
       </symbol>
     </svg></div>
 
-    <div id="Announcements"></div>
-    <div class="cookies-notice" role="region" aria-label="cookie policy">
-      <div class="grid">
-        <div class="grid__item grid__item--desktop-up-two-thirds grid__item--desktop-up-align-center">
-          <p class="cookies-notice__body">
-            Ši svetainė naudoja slapukus, tam kad pagerintų naudotojų patirtį. Naudodamiesi mūsų svetaine, jūs sutinkate su mūsų
-              <a target="_blank" class="body-link body-link--reverse"
-              href="https://www.shopify.com/legal/privacy">privatumo</a> ir <a target="_blank"
-              class="body-link body-link--reverse" href="https://www.shopify.com/legal/cookies">slapukų taisyklėmis</a>.
-          </p>
-          
-          <p class="cookies-notice__cta">
-            <button
-              class="marketing-button marketing-button--small marketing-button--skin-light js-dismiss-btn">Sutinku</button>
-          </p>
-        </div>
+  <div id="Announcements"></div>
+  <div class="cookies-notice" role="region" aria-label="cookie policy">
+    <div class="grid">
+      <div class="grid__item grid__item--desktop-up-two-thirds grid__item--desktop-up-align-center">
+        <p class="cookies-notice__body">
+          Ši svetainė naudoja slapukus, tam kad pagerintų naudotojų patirtį. Naudodamiesi mūsų svetaine, jūs sutinkate
+          su mūsų
+          <a target="_blank" class="body-link body-link--reverse"
+            href="https://www.shopify.com/legal/privacy">privatumo</a> ir <a target="_blank"
+            class="body-link body-link--reverse" href="https://www.shopify.com/legal/cookies">slapukų taisyklėmis</a>.
+        </p>
+
+        <p class="cookies-notice__cta">
+          <button
+            class="marketing-button marketing-button--small marketing-button--skin-light js-dismiss-btn">Sutinku</button>
+        </p>
       </div>
     </div>
+  </div>
 
   <div id="PageContainer">
     <main role="main" id="Main">
@@ -365,7 +367,7 @@
               mygtuką.
             </p>
             <img src="images/content/loader.gif" data-src="images/content/Paskyros Registracija 2.png"
-              alt="Paskyros Registracija" class="loader">
+              alt="Paskyros Registracija" class="loader gutter-bottom">
             <p class="gutter-bottom">
               Kituose žingsniuose būsite paprašytas Įvesti papildomą informaciją apie save ir jūsų kuriamą internetinę
               parduotuvę. Iškilus klausimams,
@@ -428,7 +430,7 @@
             </div>
           </div>
 
-          <div class="grid__item grid__item--desktop-up-two-thirds darker-text-color" id="domain-wrapper"
+          <div class="grid__item grid__item--desktop-up-two-thirds darker-text-color gutter-bottom" id="domain-wrapper"
             style="display: none;">
             <p>
               Domenas, tai - unikalus tinklapio pavadinimas. Tai adresas, kuriuo naudodamasis, klientas pasieks jūsų
@@ -574,8 +576,7 @@
                 target="_blank">https://idejumiskas.lt/paysera-mokejimai-shopify-parduotuve/</a>.
             </p>
             <img class="loader gutter-bottom" src="images/content/loader.gif"
-              data-src="images/content/Payment Gateways. Paysera Integracija 1.png"
-              alt="Paysera Integracija">
+              data-src="images/content/Payment Gateways. Paysera Integracija 1.png" alt="Paysera Integracija">
             <p>
               Norint naudotis Paysera paslaugomis jums bus taikomi atitinkami mokesčiai.
               Rekomenduojame peržiūrėti Paysera komandos sukurtą mokesčių vadovą, kurį galite rasti šioje nuorodoje - <a
@@ -586,8 +587,7 @@
               už pervedimus eurais, grynųjų pinigų operacijos, valiutos keitimo kursai, ir kt.).
             </p>
             <img class="loader gutter-bottom" src="images/content/loader.gif"
-              data-src="images/content/Payment Gateways. Paysera Integracija 2.png"
-              alt="Paysera Integracija">
+              data-src="images/content/Payment Gateways. Paysera Integracija 2.png" alt="Paysera Integracija">
             <p>
               Beje, atsižvelgdama į dabartinę COVID-19 situaciją, Paysera sumažino mokesčius pirmų 3-jų mėnesių metu
               naujiems vartotojams, tam kad verslai
@@ -598,8 +598,7 @@
             </p>
 
             <img class="loader gutter-bottom" src="images/content/loader.gif"
-              data-src="images/content/Payment Gateways. Paysera Integracija 3.png"
-              alt="Paysera Integracija">
+              data-src="images/content/Payment Gateways. Paysera Integracija 3.png" alt="Paysera Integracija">
 
             <h3 class="heading--4">Klientų atsiskaitymas kreditinėmis kortelėmis (Stripe integracija).</h3>
             <p>
@@ -622,8 +621,7 @@
               your Stripe account).
             </p>
             <img class="loader gutter-bottom" src="images/content/loader.gif"
-              data-src="images/content/Payment Gateways. Stripe Integracija 1.png"
-              alt="Stripe Integracija">
+              data-src="images/content/Payment Gateways. Stripe Integracija 1.png" alt="Stripe Integracija">
             <p>
               Kitas žingsis, kurį turėsite atlikti - aktyvuoti el. pašto adresą, kurį nurodėte registruojant Stripe
               paskyrą. Turėtumėte gauti patvirtinimo el. laišką savo el. pašto adresu. Eikite į savo el. paštą ir
@@ -638,16 +636,14 @@
               parduotuvės pavadinimas, banko sąskaita, kodėl jums reikia Stripe paskyros, ir t.t.).
             </p>
             <img class="loader gutter-bottom" src="images/content/loader.gif"
-              data-src="images/content/Payment Gateways. Stripe Integracija 2.png"
-              alt="Stripe Integracija">
+              data-src="images/content/Payment Gateways. Stripe Integracija 2.png" alt="Stripe Integracija">
             <p>
               Kai užpildysite visą informaciją, kurios prašo Stripe, spustelėkite <strong>Pateikti paraišką</strong>
               (angl. Submit Application). Turėtų pasirodyti patvirtinanti žinutė, kuri informuos apie aktyvuotą paskyrą
               ir tai, jog jau galite pradėti prekiauti naudodamiesi Stripe savo parduotuvėje.
             </p>
             <img class="loader gutter-bottom" src="images/content/loader.gif"
-              data-src="images/content/Payment Gateways. Stripe Integracija 3.png"
-              alt="Stripe Integracija">
+              data-src="images/content/Payment Gateways. Stripe Integracija 3.png" alt="Stripe Integracija">
             <p>
               Atkreipkite dėmesį į tai, kad ateityje, kai tik gausite pirmuosius pinigus iš klientų, kurie atsiskaitys
               naudodamiesi mokėjimų kortelėmis, turėsite Stripe pateikti daugiau informacijos apie savo veiklą (pvz.
@@ -679,8 +675,7 @@
               </li>
             </ol>
             <img class="loader gutter-bottom" src="images/content/loader.gif"
-              data-src="images/content/Payment Gateways. Stripe integration 4.gif"
-              alt="Stripe Integracija">
+              data-src="images/content/Payment Gateways. Stripe integration 4.gif" alt="Stripe Integracija">
             <p>
               Gavę pirmuosius pardavimus savo Shopify parduotuvėje, kuomet klientas mokėjo kreditine kortele, lėšos
               turėtų iškart atsirasti jūsų Stripe sąskaitoje.
@@ -720,8 +715,8 @@
             </div>
           </div>
 
-          <div class="grid__item grid__item--desktop-up-two-thirds darker-text-color" id="content-wrapper"
-            style="display: none;">
+          <div class="grid__item grid__item--desktop-up-two-thirds darker-text-color gutter-bottom "
+            id="content-wrapper" style="display: none;">
             <p>
               Turinys elektroninėje parduotuvėje yra labai svarbu.
               Todėl rekomenduojame skirti laiko tam, kad sukurti įvairius informacinės paskirties puslapius.
@@ -734,8 +729,7 @@
               <strong>Internetinė parduotuvė</strong> (angl. Online Store) > <strong>Puslapiai</strong> (angl. Pages) >
               <strong>Pridėti puslapį</strong> (angl. Add page).
             </p>
-            <img src="images/content/loader.gif" 
-              data-src="images/content/Parduotuves Turinys - Puslapiai 2.png" 
+            <img src="images/content/loader.gif" data-src="images/content/Parduotuves Turinys - Puslapiai 2.png"
               class="loader gutter-bottom" alt="Parduotuves Turinys - Puslapiai">
 
             <h3 class="heading--4">Apie mus</h3>
@@ -763,7 +757,8 @@
               <strong>Nustatymai</strong> (angl. Settings) > <strong>Įstatyminis</strong> (angl. Legal), ir naujai
               atsidariusiame lange galite paspausti ant Sukurti iš šablono (angl. Create from template) mygtuko, kuris
               jums Shopify sugeneruos įstatyminius puslapius anglų kalba:</p>
-            <img src="images/content/loader.gif" data-src="images/content/Parduotuves Turinys - Puslapiai 1.png" class="loader" alt="Parduotuves Turinys - Puslapiai">
+            <img src="images/content/loader.gif" data-src="images/content/Parduotuves Turinys - Puslapiai 1.png"
+              class="loader" alt="Parduotuves Turinys - Puslapiai">
             <p>Būtinai atsižvelkite į tai, kad kiekvienos šalies įstatyminėje bazėje galioja kiekvienos šalies konkretūs
               reikalavimai, todėl jei kyla papildomų klausimų rekomenduojame pasikonsultuoti su vietiniais srities
               specialistais.</p>
@@ -783,8 +778,8 @@
             </div>
           </div>
 
-          <div class="grid__item grid__item--desktop-up-two-thirds darker-text-color" id="lt-locale-wrapper"
-            style="display: none;">
+          <div class="grid__item grid__item--desktop-up-two-thirds darker-text-color gutter-bottom"
+            id="lt-locale-wrapper" style="display: none;">
             <p>
               Prekiaujant Lietuvoje Shopify parduotuvė bus patrauklesnė ir lengviau suprantama jei ją išversite į
               lietuvių kalbą. Didžioji dalis turinio internetinėje parduotuvėje bus jūsų informaciniai puslapiai,
@@ -815,7 +810,8 @@
                 kalbą viską išsaugokite.
               </li>
             </ol>
-            <img src="images/content/loader.gif" data-src="images/content/Parduotuve Lietuviu kalba.gif" class="loader gutter-bottom" alt="Parduotuvė Lietuviu kalba">
+            <img src="images/content/loader.gif" data-src="images/content/Parduotuve Lietuviu kalba.gif"
+              class="loader gutter-bottom" alt="Parduotuvė Lietuviu kalba">
             <p>
               Jei jūsų naudojama Shopify tema neturi lietuvių kalbos vertimo, tuomet viską galite išversti patys. Kad
               tai atliktumėte kiek įmanoma greičiau, siūlome pasinaudoti mūsų kolegės sukurtu gidu kaip tą padaryti.
@@ -944,7 +940,7 @@
                 Tema bus įtraukta į jūsų temų administravimo puslapį.
               </li>
             </ol>
-            <img src="images/content/loader.gif" data-src="images/content/Temos 2.gif" alt="Temos"  class="loader" />
+            <img src="images/content/loader.gif" data-src="images/content/Temos 2.gif" alt="Temos" class="loader" />
             <h3 class="heading--4">Rekomenduojame</h3>
             <p>Kadangi pradedate savo veiklą internete, mes rekomenduojame pasirinkti nemokamą <strong>Brooklyn</strong>
               temą. Kodėl būtent ji? </p>
@@ -979,27 +975,28 @@
             </div>
           </div>
 
-          <div class="grid__item grid__item--desktop-up-two-thirds darker-text-color" id="products-wrapper"
-            style="display: none;">
+          <div class="grid__item grid__item--desktop-up-two-thirds darker-text-color gutter-bottom"
+            id="products-wrapper" style="display: none;">
             <p>
               Jeigu norite pridėti produktus, ar redaguoti jų informaciją (pvz. kainą, inventorių, t.t.) tai gali
               padaryti pagrindiniame <strong>Produktai</strong> (angl. Products) puslapyje. Rekomenduojama naudoti savo
               pačių darytas parduodamų produktų nuotraukas.
             </p>
-            <p><strong>Pridėkit produktus sekdami šią seką:</strong></p>
-            <p>
-              1. Eikite į <strong>Produktai</strong> (angl. Products) puslapį ir pasirinkite <strong>Visi
-                produktai</strong> (angl. All products) skiltį.
-            </p>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 1.png" class="loader" alt="Produktai" />
-            <p>
+            <h3 class="heading--4">Pridėkit produktus sekdami šią seką:</h3>
+            <h3 class="heading--4">1. Eikite į <strong>Produktai</strong> (angl. Products) puslapį ir pasirinkite
+              <strong>Visi
+                produktai</strong> (angl. All products) skiltį.</h3>
+            <img src="images/content/loader.gif" data-src="images/content/Produktai 1.png" class="loader"
+              alt="Produktai" />
+            <h3 class="heading--4">
               2. Paspauskite ant mygtuko <strong>Pridėti produktą</strong> (angl. Add product), esantį puslapio viršuje.
-            </p>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 2.png" class="loader" alt="Produktai" />
-            <p>
+            </h3>
+            <img src="images/content/loader.gif" data-src="images/content/Produktai 2.png" class="loader"
+              alt="Produktai" />
+            <h3 class="heading--4">
               3. Įrašykite produkto pavadinimą į <strong>Pavadinimas</strong> (angl. Title) skiltį bei pridėkite
               produkto aprašymą į <strong>Aprašymas</strong> (angl. Description) lauką.
-            </p>
+            </h3>
             <p>
               Aprašymo (angl. Description) skiltyje galite naudotis raiškiojo teksto rengykle, kuri padės lengviau
               formatuoti jūsų tekstą.
@@ -1007,10 +1004,11 @@
               įrašai), <a href="https://help.shopify.com/en/manual/productivity-tools/rich-text-editor">skaitykite čia
                 anglų kalba.</a>
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 3.png" class="loader" alt="Produktai" />
-            <p>
-              <strong>4. Įkelkite produkto nuotraukas bei vaizdo įrašus </strong>
-            </p>
+            <img src="images/content/loader.gif" data-src="images/content/Produktai 3.png" class="loader"
+              alt="Produktai" />
+            <h3 class="heading--4">
+              4. Įkelkite produkto nuotraukas bei vaizdo įrašus
+            </h3>
             <strong>Nuotraukos</strong>
             <p class="gutter-bottom">
               Jūsų produkto nuotraukos gali būti bet kokio dydžio iki 4472 x 4472 pikselių arba iki 20 megapikselių, kad
@@ -1035,10 +1033,11 @@
               Jei norite pridėti savo vaizdą / vaizdo įrašą iš išorinės saugyklos, spustelėkite <strong>Pridėti
                 mediją</strong> iš URL (angl. Add media from URL).
             </p>
-            <img src="images/content/loader.gif" alt="Produktai" data-src="images/content/Produktai 4.png" class="loader" />
-            <p>
-              <strong>5. Kainų priskyrimas</strong>
-            </p>
+            <img src="images/content/loader.gif" alt="Produktai" data-src="images/content/Produktai 4.png"
+              class="loader" />
+            <h3 class="heading--4">
+              5. Kainų priskyrimas
+            </h3>
             <p>
               <strong>Produkto kaina</strong> (angl. Price) - kaina, kurią jums moka jūsų klientas.
               Valiutą galite pakeisti <strong>Bendrieji nustatymai</strong> (angl. General settings) puslapyje.
@@ -1050,18 +1049,18 @@
               pradinė produkto kaina 30€, per išpardavimą nukainuojama, ir parduodama už 15€. Šiuo atveju, jūsų kaina
               prieš nukainavimą bus 30€.
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 5.png" class="loader" alt="Produktai" />
+            <img src="images/content/loader.gif" data-src="images/content/Produktai 5.png" class="loader"
+              alt="Produktai" />
             <p>
               <strong>Produkto savikaina</strong> (angl. Cost per item) - tai kiek jums kainuoja pagaminti produktą. Jei
               produktus perparduodate, galite įvesti kainą, kurią sumokėjote gamintojui, neįskaitant mokesčių, gabenimo
               ar kitų išlaidų, arba įveskite sumą, kurią jums apytikriai kaštuoja sukurti savo produktą.
             </p>
-            <img src="images/content/loader.gif" alt="Produktai" data-src="images/content/Produktai 6.png" class="loader" />
-            <p>
-              <strong>
-                6. Pridėkite bei redaguokite produktų variantus
-              </strong>
-            </p>
+            <img src="images/content/loader.gif" alt="Produktai" data-src="images/content/Produktai 6.png"
+              class="loader" />
+            <h3 class="heading--4">
+              6. Pridėkite bei redaguokite produktų variantus
+            </h3>
             <p>
               Kiekvienas produktas gali turėti keletą jo variantų, tarkime, skirtingus dydžius bei spalvas. Kiekvienas
               toks variantas reikalauja atitinkamos informacijos parinkimo.
@@ -1078,25 +1077,25 @@
               </li>
               <li>
                 Parinkties reikšmėse įveskite kiekvieną parinkties vertę, pvz., Mažas (angl. Small), ‘’Vidutinis’’
-                (angl. Medium), ‘’Didelis’’ (angl. Large).
+                (angl. Medium), ‘’Didelis’’ (angl. Large).<br/>
+                <img src="images/content/loader.gif" data-src="images/content/Produktai 7.png" class="loader"
+              alt="Produktai" />
+              </li>
+              <li>
+                Jei norite pridėti daugiau variantų opcijų, spustelėkite <strong>Pridėti papildomą
+                  opciją</strong>(angl. Add another option). Galite pridėti iki 3 kiekvieno produkto parinkčių.
+                  <img src="images/content/loader.gif" data-src="images/content/Produktai 8.png" class="loader"
+              alt="Produktai" />
+              </li>
+              <li>
+                Spustelėkite mygtuką <strong>Išsaugoti</strong> (angl. Save).
               </li>
             </ol>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 7.png" class="loader" alt="Produktai"/>
-            <p>
-              4. Jei norite pridėti daugiau variantų opcijų, spustelėkite <strong>Pridėti papildomą
-                opciją</strong>(angl. Add another option). Galite pridėti iki 3 kiekvieno produkto parinkčių.
-            </p>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 8.png" class="loader" alt="Produktai" />
-            <p>
-              5. Spustelėkite mygtuką <strong>Išsaugoti</strong> (angl. Save).
-            </p>
-            <p>Norėdami sužinoti apie išsamesnes produktų varianto redagavimo galimybes, skaitykite
+            <p class="gutter-bottom">Norėdami sužinoti apie išsamesnes produktų varianto redagavimo galimybes, skaitykite
               <a href="https://help.shopify.com/en/manual/products/variants/edit-variants">čia anglų kalba.</a></p>
-            <p>
-              <strong>
-                7. Priskirkite produktus į tipus, žymas ar kolekcijas
-              </strong>
-            </p>
+            <h3 class="heading--4">
+              7. Priskirkite produktus į tipus, žymas ar kolekcijas
+            </h3>
             <p>
               <strong>Produkto tipas</strong> (angl. Product type) - produkto kategorija (pvz. akiniai, šampūnai, t.t.),
               kurią galite naudoti savo produktų organizavimui.
@@ -1124,45 +1123,60 @@
             </p>
 
             <h3 class="heading--4">Produktų kolekcijų kūrimas bei jų valdymas</h3>
-            <p>Norėdami sugrupuoti produktus ir supaprastinti jų paiešką parduotuvėje, sukurkite kolekcijas. </p>
+            <p class="gutter-bottom">Norėdami sugrupuoti produktus ir supaprastinti jų paiešką parduotuvėje, sukurkite kolekcijas. </p>
             <strong>Kolekcijų kūrimas</strong>
             <p>Norėdami sukurti kolekciją, atlikite šiuos žingsnius:</p>
-            <p>1. Pasirinkite <strong>Produktai</strong> (angl. Products) skiltį ir spustelėkite ant
-              <strong>Kolekcijos</strong> (angl. Collections) puslapio.</p>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 9.png" class="loader" alt="Produktai" />
-            <p>2. Spustelėkite <strong>Sukurti kolekciją</strong>(angl. Create collection) mygtuką.</p>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 10.png" class="loader" alt="Produktai" />
-            <p>3. Suteikite kolekcijai pavadinimą bei trumpą kolekcijos aprašymą. </p>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 11.png" class="loader" alt="Produktai" />
-            <p><strong>Pastaba</strong>: kolekcijos aprašas yra neprivalomas. </p>
-            <p>4. Pasirinkite <strong>Kolekcijos tipas</strong> (angl. Collections type) iš galimų pasirinkimų:</p>
-            <ul class="bulleted-list gutter-bottom">
+            <ol class="numbered-list gutter-bottom">
               <li>
-                <strong>Manuali kolekcija</strong> (angl. Manual collection) - kolekciją, į kurią produktai priskiriami
-                rankiniu būdu.
-                Daugiau apie manualias kolekcijas galite paskaityti <a
-                  href="https://help.shopify.com/manual/products/collections/manual-shopify-collection">čia anglų
-                  kalba.</a>
+                Pasirinkite <strong>Produktai</strong> (angl. Products) skiltį ir spustelėkite ant
+                <strong>Kolekcijos</strong> (angl. Collections) puslapio.
+                <img src="images/content/loader.gif" data-src="images/content/Produktai 9.png" class="loader"
+                  alt="Produktai" />
+              </li>
+              <li>Spustelėkite <strong>Sukurti kolekciją</strong>(angl. Create collection) mygtuką. <img
+                  src="images/content/loader.gif" data-src="images/content/Produktai 10.png" class="loader"
+                  alt="Produktai" /></li>
+              <li>Suteikite kolekcijai pavadinimą bei trumpą kolekcijos aprašymą.
+                <img src="images/content/loader.gif" data-src="images/content/Produktai 11.png" class="loader"
+                  alt="Produktai" />
+                <p><strong>Pastaba</strong>: kolekcijos aprašas yra neprivalomas. </p>
               </li>
               <li>
-                <strong>Automatinė kolekcija</strong> (angl. Automated collection) - kolekcija, į kurią produktai
-                priskiriami automatiškai naudojant jūsų sukurtas
-                <strong>Sąlygas</strong> (angl. Conditions) pavyzdžiui: <strong>Tipai</strong> (angl. Types),
-                <strong>Žymos</strong> (angl. Tags), <strong>Kainos</strong> (angl. Prices).
-                Galite vienu metu naudoti kelias skirtingas sąlygas. Daugiau apie sąlygų naudojimą kuriant kolekciją
-                galite rasti <a
-                  href="https://help.shopify.com/en/manual/products/collections/automated-collections/auto-select">čia
-                  anglų kalba.</a>
+                Pasirinkite <strong>Kolekcijos tipas</strong> (angl. Collections type) iš galimų pasirinkimų:
+                <ul class="bulleted-list gutter-bottom">
+                  <li>
+                    <strong>Manuali kolekcija</strong> (angl. Manual collection) - kolekciją, į kurią produktai
+                    priskiriami
+                    rankiniu būdu.
+                    Daugiau apie manualias kolekcijas galite paskaityti <a
+                      href="https://help.shopify.com/manual/products/collections/manual-shopify-collection">čia anglų
+                      kalba.</a>
+                  </li>
+                  <li>
+                    <strong>Automatinė kolekcija</strong> (angl. Automated collection) - kolekcija, į kurią produktai
+                    priskiriami automatiškai naudojant jūsų sukurtas
+                    <strong>Sąlygas</strong> (angl. Conditions) pavyzdžiui: <strong>Tipai</strong> (angl. Types),
+                    <strong>Žymos</strong> (angl. Tags), <strong>Kainos</strong> (angl. Prices).
+                    Galite vienu metu naudoti kelias skirtingas sąlygas. Daugiau apie sąlygų naudojimą kuriant kolekciją
+                    galite rasti <a
+                      href="https://help.shopify.com/en/manual/products/collections/automated-collections/auto-select">čia
+                      anglų kalba.</a>
+                      <img src="images/content/loader.gif" data-src="images/content/Produktai 12.png" class="loader"
+                        alt="Produktai" />
+                  </li>
+                </ul>
               </li>
-            </ul>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 12.png" class="loader" alt="Produktai" />
-            <p>5. <strong>Kolekcijos prieinamumas</strong> (angl. Collection availability) nustatymai padės pasirinkti,
-              kuriuose pardavimų kanaluose norite padaryti kolekciją aktyvią.</p>
-              <img src="images/content/loader.gif" data-src="images/content/Produktai 13.png" class="loader" alt="Produktai" />
-            <p>6. Galite priskirti kolekcijai paveikslėlį:</p>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 14.png" class="loader" alt="Produktai" />
-            <p>7. Išsaugokite kolekciją paspausdami ant <strong>Išsaugoti</strong> (angl. Save) mygtuko:</p>
-            <img src="images/content/loader.gif" data-src="images/content/Produktai 15.png" class="loader" alt="Produktai" />
+              <li><strong>Kolekcijos prieinamumas</strong> (angl. Collection availability) nustatymai padės pasirinkti,
+                kuriuose pardavimų kanaluose norite padaryti kolekciją aktyvią.
+                <img src="images/content/loader.gif" data-src="images/content/Produktai 13.png" class="loader"
+                  alt="Produktai" />
+              </li>
+              <li>Galite priskirti kolekcijai paveikslėlį:<img src="images/content/loader.gif"
+                  data-src="images/content/Produktai 14.png" class="loader" alt="Produktai" /></li>
+              <li>Išsaugokite kolekciją paspausdami ant <strong>Išsaugoti</strong> (angl. Save) mygtuko:<img
+                  src="images/content/loader.gif" data-src="images/content/Produktai 15.png" class="loader"
+                  alt="Produktai" /></li>
+            </ol>
           </div>
         </div>
 
@@ -1177,8 +1191,8 @@
             </div>
           </div>
 
-          <div class="grid__item grid__item--desktop-up-two-thirds darker-text-color" id="shipping-wrapper"
-            style="display: none;">
+          <div class="grid__item grid__item--desktop-up-two-thirds darker-text-color gutter-bottom"
+            id="shipping-wrapper" style="display: none;">
             <p>
               Siuntimo nustatymai leidžia pasirinkti prekių siuntimo būdus, atitinkančius jūsų verslo poreikius.
               Nesvarbu, ar siunčiate užsakymus iš skirtingų sandėlių ar prekių siuntimas vyksta tiesiai iš jūsų namų,
@@ -1187,7 +1201,8 @@
               Shopify suteikia galimybę sukurti iki 100 siuntimo profilių, o <strong>Pagrindiniai siuntimo
                 įkainiai</strong> (angl. General shipping rates) yra dažniausiai naudojama siuntimo nustatymų dalis.
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 1.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 1.png" class="loader"
+              alt="Pristatymas">
             <p>
               Pirkėjams, gyvenantiems netoliese, galite sukurti vietinio siuntimo įkainius pasiūlydami vietinio
               pristatymo galimybes arba prekių atsiėmimą tam skirtose vietose.
@@ -1215,7 +1230,8 @@
                 parduotuvėje esančius produktus, priskirtus bendrajam siuntimo profiliui. Produktai, kurie yra priskirti
                 kitiems siuntimo profiliams nėra įtraukiami į bendruosius siuntimo nustatymus.</li>
             </ol>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 2.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 2.png" class="loader"
+              alt="Pristatymas">
             <p>
               4. Prekių <strong>Išsiuntimas iš</strong> (angl. Shipping from) lange nurodykite adresą, kurį naudosite
               išsiųsdami prekes klientams.
@@ -1233,11 +1249,13 @@
             <p>
               6. Pasirinkite <strong>Sukurti siuntimo zoną</strong> (angl. Create shipping zone).
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 3.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 3.png" class="loader"
+              alt="Pristatymas">
             <p>
               7. <strong>Sekcijoje Zonos pavadinimas</strong> (angl. Zone name) įrašykite zonos pavadinimą.
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 4.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 4.png" class="loader"
+              alt="Pristatymas">
             <p>
               8. Pasirinkite šalis, kurias priskirsite šiai siuntimo zonai. Norėdami pasirinkti visas pasaulio šalis,
               pasirinkite <strong>Likusios pasaulio šalys</strong> (angl. Rest of the world), jei planuojate prekes
@@ -1253,7 +1271,8 @@
               1. Sukurtos siuntimo zonos lange pasirinkite <strong>Pridėti įkainį</strong> (angl. Add rate). Pasirinkite
               <strong>Nustatyti savo įkainius</strong> (angl. Set up your own rates).
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 5.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 5.png" class="loader"
+              alt="Pristatymas">
             <p>
               2. <strong>Įkainio pavadinimas</strong> (angl. Rate name) yra tai, ką jūsų pirkėjai matys atlikdami
               apmokėjimą už prekes. Įrašydami pavadinimą, galite nurodyti vidutinę pristatymo trukmę ar kitą svarbią
@@ -1269,7 +1288,8 @@
               sąlygas. Galite pasirinkti siuntimo įkainius, atsižvelgdami į prekės svorį arba nustatyti įkainių
               intervalus.
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 6.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 6.png" class="loader"
+              alt="Pristatymas">
             <p>
               <strong>Siuntimo įkainis pagal prekės svorį</strong> - siuntimo įkainis priklauso nuo prekės svorio. Tam,
               kad šis pristatymo kainų pritaikymos modelis veiktų, kurdami produktus parduotuvėje turėtumėte
@@ -1286,7 +1306,8 @@
             </p>
             <p>Siuntimo nustatymų lange taip pat galite atsispausdinti užsakymo lydraštį, kuris pridedamas prie užsakytų
               prekių:</p>
-              <img src="images/content/loader.gif" data-src="images/content/Shipping 7.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 7.png" class="loader"
+              alt="Pristatymas">
             <p>
               Išsiuntus pirkėjui prekę arba pirkėjui atsiėmus prekę, svarbu pažymėti užsakymą kaip
               <strong>Įvykdytas</strong> (angl. Fulfilled). Tokiu atveju bus aišku, kad užsakymas yra įvykdytas ir
@@ -1301,12 +1322,14 @@
               Informaciniai pranešimai gali būti kuriami pagrindiniame nustatymų lange pasirinkus
               <strong>Pranešimai</strong> (angl. Notifications).
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 8.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 8.png" class="loader"
+              alt="Pristatymas">
             <p>
               Rekomenduojame pritaikyti <strong>Užsakymo patvirtinimas</strong> (angl. Order Confirmation) pranešimą,
               atitinkantį jūsų norimą pateikti informaciją apie užsakymo paruošimą ir atsiėmimą.
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 9.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 9.png" class="loader"
+              alt="Pristatymas">
             <p>
               Rekomenduojamas užsakymo patvirtinimo pranešimo tekstas:
             </p>
@@ -1315,17 +1338,20 @@
                 galima atsiimti.”</i>
             </p>
             <p>Paspaudę <strong>Peržiūra</strong> (angl. Preview) mygtuką, matysite kokį tekstą gaus jūsų pirkėjas:</p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 10.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 10.png" class="loader"
+              alt="Pristatymas">
             <p>
               Užsakymą paruošus, pirkėjas gauna pranešimą apie atsiimti paruoštą užsakymą. Pirkėjams siunčiamo pranešimo
               tekstas gali būti redaguojamas <strong>Siuntimo patvirtinimas</strong> (angl. Shipping confirmation)
               lange.
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 11.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 11.png" class="loader"
+              alt="Pristatymas">
             <p>
               Peržiūrėti siunčiamo pranešimo tekstą galite paspaudę <strong>Peržiūra</strong> (angl. Preview) mygtuką.
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 12.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 12.png" class="loader"
+              alt="Pristatymas">
             <p>
               <a href="https://help.shopify.com/en/manual/sell-online/notifications/edit-template">Čia galite rasti</a>
               išsamų gidą apie automatinių pranešimų redagavimą anglų kalba.
@@ -1340,7 +1366,8 @@
               Patariama atlikti testinį užsakymą, kad įsitikintumėte, jog pristatymo būdai ir siuntimo įkainiai
               apmokėjimo lange yra rodomi tinkamai.
             </p>
-            <img src="images/content/loader.gif" data-src="images/content/Shipping 13.png" class="loader" alt="Pristatymas">
+            <img src="images/content/loader.gif" data-src="images/content/Shipping 13.png" class="loader"
+              alt="Pristatymas">
             <p>Nors galimi įvairūs pristatymo būdai, pirkėjai matys tik tuos pasirinkimus, kurie taikomi jų užsakymo
               atveju. Standartiniu būdu pažymimas pigiausias pristatymo būdas.</p>
             <p class="gutter-bottom"><strong>Pastaba</strong>. Pristatymo būdai matomi tik suvedus pristatymo adresą.
