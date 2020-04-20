@@ -96,6 +96,24 @@
     .logos-grid img {
       max-width: 100%;
     }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe,
+    .video-container object,
+    .video-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   </style>
   <script>
     function toggleCollapsible(event, id) {
@@ -530,11 +548,12 @@
                 href="https://help.shopify.com/en/manual/domains/add-a-domain/using-existing-domains"
                 target="_blank">daugiau info anglų kalba</a>).
             </p>
-            <p class="gutter-bottom">
+            <div class="video-container gutter-bottom">
+
               <iframe width="560" height="315" src="https://www.youtube.com/embed/noJ-Sl1cQG4" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
-            </p>
+            </div>
           </div>
         </div>
 
@@ -1277,7 +1296,7 @@
             <ol class="numbered-list gutter-bottom">
               <li>
                 Sukurtos siuntimo zonos lange pasirinkite <strong>Pridėti įkainį</strong> (angl. Add rate). Pasirinkite
-                <strong>Nustatyti savo įkainius</strong> (angl. Set up your own rates). <br/>
+                <strong>Nustatyti savo įkainius</strong> (angl. Set up your own rates). <br />
                 <img src="images/content/loader.gif" data-src="images/content/Shipping 5.png" class="loader"
                   alt="Pristatymas" />
               </li>
@@ -1297,22 +1316,25 @@
                 intervalus.
                 <img src="images/content/loader.gif" data-src="images/content/Shipping 6.png" class="loader"
                   alt="Pristatymas" />
-                  <ul class="bulleted-list">
-                    <li>
-                      <strong>Siuntimo įkainis pagal prekės svorį</strong> - siuntimo įkainis priklauso nuo prekės svorio. Tam,
-              kad šis pristatymo kainų pritaikymos modelis veiktų, kurdami produktus parduotuvėje turėtumėte
-              pasirūpinti, kad kiekvienas iš jų turėtų įrašytą svorį produkto specifikacijos nustatymuose.
-                    </li>
-                    <li>
-                      <strong>Siuntimo įkainis pagal užsakymo vertę</strong> - siuntimo įkainis priklauso nuo visos užsakymo
-              vertės. Šios sąlygos dėka, galite nustatyti nemokamą pristatymo kainą, jei klientai perka prekių už tam
-              tikrą sumą.
-                    </li>
-                  </ul>
+                <ul class="bulleted-list">
+                  <li>
+                    <strong>Siuntimo įkainis pagal prekės svorį</strong> - siuntimo įkainis priklauso nuo prekės svorio.
+                    Tam,
+                    kad šis pristatymo kainų pritaikymos modelis veiktų, kurdami produktus parduotuvėje turėtumėte
+                    pasirūpinti, kad kiekvienas iš jų turėtų įrašytą svorį produkto specifikacijos nustatymuose.
+                  </li>
+                  <li>
+                    <strong>Siuntimo įkainis pagal užsakymo vertę</strong> - siuntimo įkainis priklauso nuo visos
+                    užsakymo
+                    vertės. Šios sąlygos dėka, galite nustatyti nemokamą pristatymo kainą, jei klientai perka prekių už
+                    tam
+                    tikrą sumą.
+                  </li>
+                </ul>
               </li>
               <li>
                 Paspauskite mygtuką <strong>Atlikta</strong> (angl. Done), kad patvirtintumėte pakeitimus ir
-              išsaugokite nustatymus paspausdami mygtuką <strong>Išsaugoti</strong> (angl. Save).
+                išsaugokite nustatymus paspausdami mygtuką <strong>Išsaugoti</strong> (angl. Save).
               </li>
             </ol>
             <p>Siuntimo nustatymų lange taip pat galite atsispausdinti užsakymo lydraštį, kuris pridedamas prie užsakytų
@@ -1365,7 +1387,8 @@
             <img src="images/content/loader.gif" data-src="images/content/Shipping 12.png" class="loader"
               alt="Pristatymas">
             <p class="gutter-bottom>
-              <a href="https://help.shopify.com/en/manual/sell-online/notifications/edit-template">Čia galite rasti</a>
+              <a href=" https://help.shopify.com/en/manual/sell-online/notifications/edit-template">Čia galite
+              rasti</a>
               išsamų gidą apie automatinių pranešimų redagavimą anglų kalba.
             </p>
             <h3 class="heading--4">Kaip pirkėjai pasirenka užsakymų pristatymo būdus</h3>
